@@ -1,0 +1,41 @@
+{% extends "manufacture/manufacture_index.html" %}
+{% block body %}
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Untitled Document</title>
+    </head>
+
+    <body>
+    <form id="form1" name="form1" method="post" action="">
+        <table width="742" height="191" border="1" class="table table-secondary">
+            <tr>
+                <th width="97" height="43" scope="row">#</th>
+                <td width="123">product_name</td>
+                <td width="52">image</td>
+                <td width="34">rate</td>
+                <td width="69">quantity</td>
+                <td width="92">expirydate</td>
+                <td width="141">manufacturedate</td>
+                {#      <td width="82">&nbsp;</td>#}
+            </tr>
+            {% for i in data %}
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td>{{ i.product_name }}&nbsp;</td>
+                    <td><img src="{{ i.image }}" width="100" height="100"/></td>
+                    <td>{{ i.quantity }}&nbsp;</td>
+                    <td>{{ i.manufacture_rate }}&nbsp;</td>
+                    <td>{{ i.manufacture_date }}&nbsp;</td>
+                    <td>{{ i.expire_date }}</td>
+                    {#      <td><p><a href="#">update</a></p>#}
+                    {#      <p><a href="#">delete</a></p></td>#}
+                </tr>
+            {% endfor %}
+        </table>
+    </form>
+    </body>
+    </html>
+{% endblock %}
