@@ -1,5 +1,5 @@
 import time
-from flask import Flask, render_template, request, redirect, session, jsonify
+from Flask import Flask, render_template, request, redirect, session, jsonify
 from DBConnection import Db
 import qrcode
 from enc_dec import AESCipher
